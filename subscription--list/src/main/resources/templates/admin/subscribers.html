@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Administration | Subscribers</title>
+	</head>
+	
+	<body>
+	
+	 <form action="/admin/subscribers/compose">	
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>name</th>
+					<th>email</th>
+					<th> ? </th>
+				</tr>
+			</thead>
+			
+			<tbody>			
+				<tr th:each="subscriber: ${subscribers}">
+					<td th:text=${subscriber.id}></td>
+					<td th:text=${subscriber.name}></td>
+					<td th:text=${subscriber.email}></td>
+					<td> <input 
+							type="checkbox"
+							name="subscribers"
+							th:attr="value=${subscriber.id}"
+					/> </td>
+				</tr>
+				
+			</tbody>
+			
+		 		
+		</table>
+		<button>COMPOSE MESSAGE</button>
+	 </form>	
+	 
+	</body>
+</html>
